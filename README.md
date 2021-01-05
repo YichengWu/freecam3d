@@ -22,17 +22,17 @@ The pre-processed TFrecord files can be downloaded from [Google Drive](https://d
 
 ## Train
 
-To train the entire framework, simply run the following code.
+The PSFs used here are captured from an experiemntal prototype. To train the network to optimize the network, simply run the following code.
 ```
-python depth_estimation.py
+python train.py
 ```
-Inside the code, `results_dir` is the output result directory, `DATA_PATH` is the directory of the downloaded dataset. The learning rate of the optical layer and digital network can be set individually using `lr_optical` and `lr_digital`. Detailed instruction about choosing the learning rate can be found in paper Sec. IIID(d).
+Inside the code, `DATA_PATH_root` is the directory of the downloaded dataset, `results_dir` is the output result directory.
 
 ### Logging
 
-We use Tensorboard for logging training progress. Recommended: execute `tensorboard --logdir /path/to/save_dir --port 9001` and visit `localhost:9001` in the browser.
+We use Tensorboard for logging training progress. Recommended: execute `tensorboard --logdir /path/to/save_dir --port 9999` and visit `localhost:9999` in the browser.
 
-## Evaluation
+## Evaluation ???
 
 Once the network is trained, the performance can be evaluated using the testing dataset. 
 ```
@@ -46,29 +46,17 @@ If you want to see the performance of our best result, please download from [Goo
   <img width="500" src="/figures/PhaseCam3D_sim_results.png">
 </p>
 
-### Ablation study
-We did a comprehensive ablation study by varying the learning rate, initialization, and loss. All the results are listed here. Please let us know if you outperform our results!
-
-Exp.       | Learn mask   | Initialization       | Loss                  | Error (RMS)   |
------------|--------------|----------------------|-----------------------|---------------|
-A          | No           | No mask              | RMS                   | 2.69          |
-B          | Yes          | Random               | RMS                   | 1.07          |
-C          | No           | Fisher mask          | RMS                   | 0.97          |
-D          | Yes          | Random               | RMS+CRLB              | 0.88          |
-E          | Yes          | Fisher mask          | RMS                   | 0.74          |
-F          | Yes          | Fisher mask          | RMS+CRLB              | 0.85          |
-**G**      | **Yes**      | **Fisher mask**      | **RMS+gradient**      | **0.56**      |
 
 ## Citation
 If you use this code for your research, please cite our papers.
 ```
-@inproceedings{wu2019phasecam3d,
-  title={PhaseCam3D—Learning Phase Masks for Passive Single View Depth Estimation},
-  author={Wu, Yicheng and Boominathan, Vivek and Chen, Huaijin and Sankaranarayanan, Aswin and Veeraraghavan, Ashok},
-  booktitle={2019 IEEE International Conference on Computational Photography (ICCP)},
-  pages={1--12},
-  year={2019},
-  organization={IEEE}
+@inproceedings{wu2020freecam3d,
+  title={FreeCam3D: Snapshot Structured Light 3D with Freely-Moving Cameras},
+  author={Wu, Yicheng and Boominathan, Vivek and Zhao, Xuan and Robinson, Jacob T and Kawasaki, Hiroshi and Sankaranarayanan, Aswin and Veeraraghavan, Ashok},
+  booktitle={European Conference on Computer Vision},
+  pages={309--325},
+  year={2020},
+  organization={Springer}
 }
 ```
 ## Contributions
