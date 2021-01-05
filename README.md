@@ -18,7 +18,7 @@ The code is developed using Python 3.6.8 and TensorFlow 1.14.0. The GPU we used 
 ## Dataset
 
 The dataset is generated from Blender, which contains both the depth map from the project and camera view of a same scene, as well as the relative pose tranformation.
-The pre-processed TFrecord files can be downloaded from [Google Drive](https://drive.google.com/drive/folders/18b1CamTQd6wf2o3kxfL5aqWtWopIDuVG?usp=sharing). It contains 5077 training patches, 553 validation patches, and 419 test patches.
+The pre-processed TFrecord files can be downloaded from [Google Drive](https://drive.google.com/drive/folders/18b1CamTQd6wf2o3kxfL5aqWtWopIDuVG?usp=sharing). It contains 4850 training elements, 912 validation elements, and 201 test elements.
 
 ## Train
 
