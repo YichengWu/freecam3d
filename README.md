@@ -10,14 +10,15 @@ This repository contains TensorFlow implementation for the ECCV2020 paper *Phase
 ## Installation
 Clone this repo.
 ```bash
-git clone https://github.com/YichengWu/PhaseCam3D
-cd PhaseCam3D/
+git clone https://github.com/YichengWu/freecam3D
+cd freecam3D/
 ```
-The code is developed using Python 3.7.1 and TensorFlow 1.13.0. The GPU we used is NVIDIA GTX 1080 Ti (11G). Change `batch_size` accordingly if you run the code with different GPU memory.
+The code is developed using Python 3.6.8 and TensorFlow 1.14.0. The GPU we used is NVIDIA GTX 2080 Ti (11G). Change `batch_size` accordingly if you run the code with different GPU memory.
 
 ## Dataset
 
-The dataset is modified based on FlyingThings3D in [Scene Flow Datasets](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html). The pre-processed TFrecord files can be downloaded from [Google Drive](https://drive.google.com/drive/folders/18b1CamTQd6wf2o3kxfL5aqWtWopIDuVG?usp=sharing). It contains 5077 training patches, 553 validation patches, and 419 test patches.
+The dataset is generated from Blender, which contains both the depth map from the project and camera view of a same scene, as well as the relative pose tranformation.
+The pre-processed TFrecord files can be downloaded from [Google Drive](https://drive.google.com/drive/folders/18b1CamTQd6wf2o3kxfL5aqWtWopIDuVG?usp=sharing). It contains 5077 training patches, 553 validation patches, and 419 test patches.
 
 ## Train
 
