@@ -32,20 +32,13 @@ Inside the code, `DATA_PATH_root` is the directory of the downloaded dataset, `r
 
 We use Tensorboard for logging training progress. Recommended: execute `tensorboard --logdir /path/to/save_dir --port 9999` and visit `localhost:9999` in the browser.
 
-## Evaluation ???
+## Evaluation
 
 Once the network is trained, the performance can be evaluated using the testing dataset. 
 ```
-python depth_estimation_test.py
+python test.py
 ```
-Change `results_dir` to the place you save your model. Once the testing is finished, a new folder called `test_all` will be created inside the model directory. It contains 400 scenes, and each one includes a clean image `sharp.png`, a coded image `blur.png`, an estimated disparity map `phiHat.png`, and a ground truth disparity map `phiGT.png`.
-
-If you want to see the performance of our best result, please download from [Google Drive](https://drive.google.com/drive/folders/12zqZjkllc9IllSIloOSfJNlkDvHL46Hb?usp=sharing). Sample images are shown below.
-
-<p align="center">
-  <img width="500" src="/figures/PhaseCam3D_sim_results.png">
-</p>
-
+Change `results_dir` to the place you save your model. Once the testing is finished, a new folder called `test` will be created inside the model directory.
 
 ## Citation
 If you use this code for your research, please cite our papers.
