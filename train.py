@@ -3,7 +3,6 @@ Main code to train the networks.
 '''
 
 import numpy as np
-import def_dir
 import tensorflow as tf
 from tensorflow import ConfigProto
 import os
@@ -15,15 +14,14 @@ from utils import *
 from optics import codePattern
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 config = ConfigProto()
 config.gpu_options.allow_growth = True
 
 ######################################## Parameters ##################################################
 
-# TODO: remove it for github version
-DATA_PATH_root = def_dir.pattern_dir() + 'calibrationFree3D/Dataset/blender/1200_800/'
-results_dir = def_dir.pattern_dir() + 'calibrationFree3D/tmp_0105_exp_psfs/'
+DATA_PATH_root = './Dataset/'
+results_dir = './FreeCam3D_model/'
 pattern_type = 'kronTwoFix'
 B = 1
 B_sub = 10

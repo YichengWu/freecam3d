@@ -3,7 +3,6 @@ test code for simulation data
 '''
 
 import numpy as np
-import def_dir
 import tensorflow as tf
 from tensorflow import ConfigProto
 import os
@@ -16,17 +15,17 @@ import imageio
 import matplotlib.image
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 config = ConfigProto()
 config.gpu_options.allow_growth = True
 
 ######################################## Parameters ##################################################
 
-DATA_PATH_root = def_dir.pattern_dir() + 'calibrationFree3D/Dataset/blender/1200_800/'
-results_dir = def_dir.pattern_dir() + 'calibrationFree3D/best/'
-out_dir = 'sim/'
+DATA_PATH_root = './Dataset/'
+results_dir = './FreeCam3D_model/'
+out_dir = 'test/'
 pattern_type = 'kronTwoFix'
-NN = 100
+NN = 10
 B = 1
 H = 800
 W = 1200
