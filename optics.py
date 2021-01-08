@@ -8,7 +8,6 @@ import scipy.io as sio
 
 #### optical parameters:
 wvl = 530e-9
-zernike = sio.loadmat('PSFs/zernike_basis75.mat')
 
 # for Wm -60to60
 z_min = 0.695714566
